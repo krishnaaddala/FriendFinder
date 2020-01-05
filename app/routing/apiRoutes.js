@@ -25,6 +25,8 @@ res.send("body Received");
 //get the data from the front end
 //loop through all the friends in the DB and match them
 // respond back with who has the closest answer
+//one loop friends.length
+//another loop for scores.length
 //
   
   });
