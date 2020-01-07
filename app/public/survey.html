@@ -180,6 +180,20 @@
         </div>
     </div>
 
+    <div class="modal fade" id="newModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Best Match</h4>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+          <div class="modal-body">
+            <h5 id="modal-text"></h5>
+            <img id="modal-photo"></img>
+          </div>
+        </div>
+    </div>
+
     <script>
         //on-click capture the form input
         //send it as a JSON to the API ROUTES
@@ -209,6 +223,12 @@
 
             $.post("/api/friends", userData, function (data) {
                 console.log(data);
+                $("#modal-text").text(data.name);
+                $("#modal-photo").attr("src", data.photo);
+                $("#modal-photo").width(150);
+                $("#modal-photo").height(150);
+                $("#newModal").modal("show");
+
             });
         });
     </script>
