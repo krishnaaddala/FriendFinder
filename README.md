@@ -24,14 +24,14 @@ Chrome browser
 
 ## Screenshots of homework progress
 
-![Code progression Final](https://github.com/krishnaaddala/BAmazonCLIApp/blob/master/Images/Working_code_1.png "Working code1")
+![Code progression Final](https://github.com/krishnaaddala/FriendFinder/blob/master/Images/FinalCode_1.png "Final code1")
 
-![Code progression Final](https://github.com/krishnaaddala/BAmazonCLIApp/blob/master/Images/Working_code_2.png "Working Code2")
+![Code progression Final](https://github.com/krishnaaddala/FriendFinder/blob/master/Images/FinalCode2.png "Final Code2")
 
 
 ## Gif walkthrough
 
-![Giphy](https://github.com/krishnaaddala/BAmazonCLIApp/blob/master/Images/FinalGify.gif)
+![Giphy](https://github.com/krishnaaddala/FriendFinder/blob/master/Images/FinalGiphy.gif)
 
 
 ## Code Snippets
