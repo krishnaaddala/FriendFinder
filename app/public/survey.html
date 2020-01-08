@@ -142,14 +142,14 @@
                         <h4>Question 9</h4>
                         <h5>You think that everyone’s views should be respected regardless of whether they are supported
                             by facts or not.</h5>
-                            <select class="chosen-select" id="q9">
-                                <option value=""></option>
-                                <option value="1">1 (Strongly Disagree)</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5 (Strongly Agree)</option>
-                            </select>
+                        <select class="chosen-select" id="q9">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
                     </div>
                     <br>
                     <div class="container10">
@@ -164,12 +164,21 @@
                             <option value="5">5 (Strongly Agree)</option>
                         </select>
                     </div>
-                    <button id="submit" class="btn btn-primary">Submit</button>
+                    <br>
+                    <button id="submit" class="btn btn-primary" style="height:50px; width:900px">Submit</button>
+                    <br>
+                    <hr>
+                    <footer class="footer">
+                        <div class="container">
+                            <p><a href="/api/friends">API Friends List</a> | <a
+                                    href="https://github.com/krishnaaddala/FriendFinder">GitHub Repo</a>
+                        </div>
+                    </footer>
+                    <br>
                     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-                    <script
-                    src="https://code.jquery.com/jquery-3.4.1.min.js"
-                    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-                    crossorigin="anonymous"></script>
+                    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+                        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                        crossorigin="anonymous"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
                         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
                         crossorigin="anonymous"></script>
@@ -182,55 +191,55 @@
 
     <div class="modal fade" id="newModal" role="dialog">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Best Match</h4>
-              <button type="button" class="close" data-dismiss="modal">×</button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Best Match</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <h5 id="modal-text"></h5>
+                    <img id="modal-photo"></img>
+                </div>
             </div>
-          <div class="modal-body">
-            <h5 id="modal-text"></h5>
-            <img id="modal-photo"></img>
-          </div>
         </div>
-    </div>
 
-    <script>
-        //on-click capture the form input
-        //send it as a JSON to the API ROUTES
+        <script>
+            //on-click capture the form input
+            //send it as a JSON to the API ROUTES
 
-        $("#submit").on("click", function (event) {
-            event.preventDefault();
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
 
-            // Here we grab the form elements
-            var userData = {
-                userName: $("#enterName").val().trim(),
-                images: $("#userImage").val().trim(),
-                choices: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val()
-                ]
-            };
+                // Here we grab the form elements
+                var userData = {
+                    userName: $("#enterName").val().trim(),
+                    images: $("#userImage").val().trim(),
+                    choices: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
+                    ]
+                };
 
-            console.log(userData);
+                console.log(userData);
 
-            $.post("/api/friends", userData, function (data) {
-                console.log(data);
-                $("#modal-text").text(data.name);
-                $("#modal-photo").attr("src", data.photo);
-                $("#modal-photo").width(350);
-                $("#modal-photo").height(250);
-                $("#newModal").modal("show");
+                $.post("/api/friends", userData, function (data) {
+                    console.log(data);
+                    $("#modal-text").text(data.name);
+                    $("#modal-photo").attr("src", data.photo);
+                    $("#modal-photo").width(300);
+                    $("#modal-photo").height(250);
+                    $("#newModal").modal("show");
+                });
             });
-        });
-    </script>
+        </script>
 </body>
 
 
